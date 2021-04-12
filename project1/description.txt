@@ -1,0 +1,13 @@
+BMI를 계산해주는 앱
+
+Layout을 그리는법 
+-LinearLayout
+-TextView
+-EditText
+-Button
+
+Activity에 대해 알아보기
+
+Kotlin 문법
+when 분기문
+람다함수
