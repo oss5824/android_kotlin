@@ -1,0 +1,15 @@
+BMI를 계산해주는 앱
+
+Layout을 그리는법 
+-constaintlayout
+-numberpicker
+-textview
+-button
+Shape Drawable 사용하기
+
+Kotlin 문법
+when 
+apply
+random
+collection-set,list
+람다함수
