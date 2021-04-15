@@ -1,0 +1,12 @@
+Layout을 그리는법
+-ConstraintLayout사용하기
+-Custom Font 사용하기
+
+Handler사용하기
+Theme사용하기
+AlertDialog사용하기
+SharedPreference사용하는법
+-가져올 때 getSharedPreferences라는 함수 사용 
+
+kotlin문법
+android-ktx기능 사용하기
