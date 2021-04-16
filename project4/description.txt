@@ -1,0 +1,14 @@
+Layout을 그리는법
+-TableLayout사용하기
+-ConstraintLayout사용하기
+-LayoutInflater사용하기
+
+Thread사용하기
+-타 Thread만들어서 사용하기
+-runOnUiThread사용하기
+
+Room사용하기
+
+Kotlin 문법
+-확장 함수 사용하기
+-data class 사용하기
