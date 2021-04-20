@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Aop_part2_chpater05" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+
+        <item name="android:statusBarColor">@color/pomodoro_red</item>
+
+        <item name="android:background">@color/pomodoro_red</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
