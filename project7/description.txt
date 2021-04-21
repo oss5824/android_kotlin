@@ -1,0 +1,8 @@
+마으크를 통해 음성 녹음을 할 수 있다
+녹음한 음성을 재생할 수 있다.
+음성을 시각화해서 볼 수 있다
+
+Request runtime permissions
+CustomView
+MediaRecorder
+
