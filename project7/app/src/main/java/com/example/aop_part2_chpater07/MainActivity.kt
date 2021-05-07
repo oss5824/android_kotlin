@@ -10,6 +10,13 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
+    private val soundVisualizerView:SoundVisualizerView by lazy{
+        findViewById(R.id.soundVisualizerView)
+    }
+    private val recordTimeView: CountUpTextView by lazy{
+        findViewById(R.id.recordTimeTextView)
+    }
+
     private val resetButton: Button by lazy {
         findViewById(R.id.resetButton)
     }
@@ -69,8 +76,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindViews() {
+
+        soundVisualizerView.onRequestCurrnetAmplitude={
+            recorder?.maxAmplitude?:0
+        }
         resetButton.setOnClickListener {
             stopPlaying()
+            soundVisualizerView.clearVisualization()
+            recordTimeView.clearCountTime()
             state = State.BEFORE_RECORDING
         }
         recordButton.setOnClickListener {
@@ -100,6 +113,8 @@ class MainActivity : AppCompatActivity() {
             prepare()
         }
         recorder?.start()
+        recordTimeView.startCountUp()
+        soundVisualizerView.startVisualizing(false)
         state = State.ON_RECORDING
     }
 
@@ -109,6 +124,8 @@ class MainActivity : AppCompatActivity() {
             release()
         }
         recorder = null
+        recordTimeView.stopCountUp()
+        soundVisualizerView.stopVisualizing()
         state = State.AFTER_RECORDING
     }
 
@@ -121,13 +138,20 @@ class MainActivity : AppCompatActivity() {
             setDataSource(recordingFilePath)
             prepare() //todo 사이즈가 큰 파일을 가져와야하는 경우 issue가 생길 수 있음 ->async사용
         }
+        player?.setOnCompletionListener {
+            stopPlaying()
+            state=State.AFTER_RECORDING
+        }
         player?.start()
+        recordTimeView.startCountUp()
+        soundVisualizerView.startVisualizing(true)
         state = State.ON_PLAYING
     }
 
     private fun stopPlaying() {
         player?.release()
         player = null
+        soundVisualizerView.stopVisualizing()
         state = State.AFTER_RECORDING
     }
 
