@@ -1,0 +1,8 @@
+Firebase Remote Config
+ViewPager2
+
+프로젝트셋업하기
+기본 UI구성하기
+REMOTE CONFIG 구성하기
+REMOTE CONFIG 연동하기
+완성도 높이기
