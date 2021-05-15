@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@id/onOffButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/timeTextView"
         tools:text="AM" />
 
     <Button
