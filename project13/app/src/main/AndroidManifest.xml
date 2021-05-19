@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-
+        <activity android:name=".LikeActivity"/>
+        <activity android:name=".MatchedUserActivity"/>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
