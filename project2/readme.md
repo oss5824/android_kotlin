@@ -14,3 +14,5 @@
   - 인덱스에 접근해주기 위해서는 forEachIndexed형태로도 접근할 수 있음  
 + 복권의 번호처럼 numberPicker에서의 값이 1~45사이에서만 보여주게 하기 위해 numberPicker의 minValue 프로퍼티를 1로 maxValue 프로퍼티를 45로 설정해줌  
 + 출력되는 TextView가 복권 번호처럼 원의 모양처럼 출력이 되고 각각의 색을 바꿔주기 위해서 textView의 background프로퍼티를 ContextCompat.getDrawble(this,R.drawable.name)을 활용해 바꿔줌  
+![1](./1.png)
+![1](./2.png) 
