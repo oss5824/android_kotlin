@@ -1,18 +1,17 @@
-# 웹뷰    
+# 웹뷰  
 ## xml  
 ### activity_main   
-+ 분과 초를 시간이 지남에 따라 보여줄 TextView  
-+ Seek바를 통해 남은 시간을 bar의 형태로 보여줌  
++ 버튼과 EditText를 ConstraintLayout으로 감싸줌  
++ 버튼의 DimensionRatio 속성을 통해 이미지 버튼의 크기를 비율에 맞게 조정  
++ EditText의 imeOptions속성을 actionDone으로 주고 해당 버튼이 눌렸을 때의 이벤트 처리를 MainActivity에서 해줌  
++ selectAllOnFocus속성을 True로 줌으로써 EditText가 선택되었을 때 모든 문자열이 선택될 수 있도록 해줌  
++ 웹을 아래로 당겼을 때 해당 내용이 refresh될 수 있도록 SwipeRefreshLayout으로 WebView를 감싸줌  
++ 다음 실행 될 웹뷰가 어느정도 진행되었나를 나타내주기 위해 ContentLoadingProgressBar를 배치  
 
 ## Activity  
 ### MainActivity  
-+ sound를 활용하기 위해 앱내에 있는 Sound를 재생할 때 쓰이는 Class인 SounPool활용  
-+ SoundPool의 Builder를 이용해 객체 생성  
-+ Load 메소드를 통해 사운드 리소스를 load해주어야 함  
-+ 리소스를 사용한 이후에는 항상 release를 해주어야 함  
-+ seekBar를 활용해 남은 시간의 값에 따라 화살표의 위치를 변경해 줌  
-+ seekBar의 setOnSeekBarChangeListener를 사용해 SeekBar의 값이 변할 때마다 시간을 나타내는 TextView의 값을 업데이트  
-+ seekBar의 Bar를 사용자가 임의로 끌어서 시간을 변경할 수도 있음  
-+ 
++ webview를 연결하면 자동으로 외부 웹 브라우저로 이동하게 되기 때문에 이를 해결하기 위해 override를 해줘야 함  
++ 뒤로가기 버튼을 눌렀을 때 이전의 웹사이트로 이동되는 구조기 때문에 onBackPressed를 override해서 webView의 goBack 메소드를 실행해주고 이 구조는 웹사이트들을 하나씩 스택에 쌓아두고 뒤로가기를 할 때 스택에서 pop하여 다시 top을 보여주는 구조를 활용  
++  내부의 다른 class를 통해 상위 클래스에 접근하기 위해 inner class를 사용해주고 상속받은 상위클래스에 있는 필요한 기능들을 override하여 사용  
 
 ![1](./1.png)
