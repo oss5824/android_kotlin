@@ -1,18 +1,13 @@
-# 타이머  
+# 명언
 ## xml  
 ### activity_main   
-+ 분과 초를 시간이 지남에 따라 보여줄 TextView  
-+ Seek바를 통해 남은 시간을 bar의 형태로 보여줌  
++ 명언을 옆으로 화면을 넘기면서 보여지게 하기 위해 뷰 페이저를 배치   
 
 ## Activity  
 ### MainActivity  
-+ sound를 활용하기 위해 앱내에 있는 Sound를 재생할 때 쓰이는 Class인 SounPool활용  
-+ SoundPool의 Builder를 이용해 객체 생성  
-+ Load 메소드를 통해 사운드 리소스를 load해주어야 함  
-+ 리소스를 사용한 이후에는 항상 release를 해주어야 함  
-+ seekBar를 활용해 남은 시간의 값에 따라 화살표의 위치를 변경해 줌  
-+ seekBar의 setOnSeekBarChangeListener를 사용해 SeekBar의 값이 변할 때마다 시간을 나타내는 TextView의 값을 업데이트  
-+ seekBar의 Bar를 사용자가 임의로 끌어서 시간을 변경할 수도 있음  
-+ 
-
++ viewPager의 setPageTransformer를 사용해 page와 position을 받아 page의 위치에 따라 투명도인 alpha값을 변경하여 다음 page로 이동할 때 점차 사라지는 효과  
++ FirebaseRemoteConfig사용  
+    - 사용자가 앱 업데이트를 다운로드할 필요 없이 앱의 동작과 모양을 변경할 수 있는 클라우드 서비스   
++ JSONObject의 getJSONObject를 통해 firebase로부터 받은 JSON형태의 데이터를 parsing해줌  
+  
 ![1](./1.png)
