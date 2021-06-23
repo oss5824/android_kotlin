@@ -1,10 +1,12 @@
 package com.example.aop_part4_chapter03
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.example.aop_part4_chapter03.MapActivity.Companion.SEARCH_RESULT_EXTRA_KEY
 import com.example.aop_part4_chapter03.databinding.ActivityMainBinding
 import com.example.aop_part4_chapter03.model.LocationLatLngEntity
 import com.example.aop_part4_chapter03.model.SearchResultEntity
@@ -71,6 +73,9 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
                 Toast.LENGTH_SHORT
             )
                 .show()
+            startActivity(Intent(this, MapActivity::class.java).apply {
+                putExtra(SEARCH_RESULT_EXTRA_KEY, it)
+            })
         }
     }
 
