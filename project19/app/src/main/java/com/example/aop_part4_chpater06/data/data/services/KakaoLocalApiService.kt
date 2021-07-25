@@ -1,7 +1,7 @@
 package com.example.aop_part4_chpater06.data.data.services
 
 import com.example.aop_part4_chpater06.BuildConfig
-import com.example.aop_part4_chpater06.data.data.tmcoordinates.TmCoordinatesResponse
+import com.example.aop_part4_chpater06.data.data.models.tmcoordinates.TmCoordinatesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers

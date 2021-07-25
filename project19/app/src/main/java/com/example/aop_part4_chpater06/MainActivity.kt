@@ -8,6 +8,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.example.aop_part4_chpater06.data.data.Repository
+import com.example.aop_part4_chpater06.data.data.models.airquaility.Grade
+import com.example.aop_part4_chpater06.data.data.models.airquaility.MeasuredValue
+import com.example.aop_part4_chpater06.data.data.models.monitoringstation.MonitoringStation
 import com.example.aop_part4_chpater06.databinding.ActivityMainBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
@@ -87,10 +90,26 @@ class MainActivity : AppCompatActivity() {
             scope.launch {
                 val monitoringStation = Repository.getNearbyMonitoringStation(37.toDouble(), 37.toDouble())
 
-                binding.textView.text=monitoringStation?.stationName
+                val measuredValue = Repository.getLatestAirQualityData(monitoringStation!!.stationName!!)
+
             }
         }.addOnFailureListener {
             Log.d("실패", it.toString())
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    fun displayAiQualityData(monitoringStation: MonitoringStation, measuredValue: MeasuredValue){
+        binding.measuringStationNameTextView.text=monitoringStation.stationName
+        binding.measuringStationAddressTextView.text=monitoringStation.addr
+
+        (measuredValue.khaiGrade?: Grade.UNKNOWN).let{grade->
+            binding.root.setBackgroundColor(grade.colorResId)
+            binding.totalGradeLabelTextView.text=grade.label
+            binding.totalGradleEmojiTextView.text=grade.emoji
+        }
+
+        with(measuredValue){
         }
     }
 

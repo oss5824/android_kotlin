@@ -1,4 +1,4 @@
-package com.example.aop_part4_chpater06.data.data.tmcoordinates
+package com.example.aop_part4_chpater06.data.data.models.tmcoordinates
 
 
 import com.google.gson.annotations.SerializedName

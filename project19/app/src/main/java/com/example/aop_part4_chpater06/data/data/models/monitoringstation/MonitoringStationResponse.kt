@@ -1,4 +1,4 @@
-package com.example.aop_part4_chpater06.data.data.monitoringstation
+package com.example.aop_part4_chpater06.data.data.models.monitoringstation
 
 
 import com.google.gson.annotations.SerializedName

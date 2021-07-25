@@ -1,7 +1,8 @@
 package com.example.aop_part4_chpater06.data.data
 
 import com.example.aop_part4_chpater06.BuildConfig
-import com.example.aop_part4_chpater06.data.data.monitoringstation.MonitoringStation
+import com.example.aop_part4_chpater06.data.data.models.airquaility.MeasuredValue
+import com.example.aop_part4_chpater06.data.data.models.monitoringstation.MonitoringStation
 import com.example.aop_part4_chpater06.data.data.services.AirKoreaApiService
 import com.example.aop_part4_chpater06.data.data.services.KakaoLocalApiService
 import okhttp3.OkHttpClient
@@ -43,6 +44,15 @@ object Repository {
             .build()
             .create()
     }
+
+    suspend fun getLatestAirQualityData(stationName: String): MeasuredValue? =
+        airKoreaApiService
+            .getRealtimeAirQualties(stationName)
+            .body()
+            ?.response
+            ?.body
+            ?.measuredValues
+            ?.firstOrNull()
 
     private fun buildHttpClient(): OkHttpClient = OkHttpClient.Builder().addInterceptor(
         HttpLoggingInterceptor().apply {
