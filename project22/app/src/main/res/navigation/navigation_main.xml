@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/stations_dest"
-        android:name="com.example.aop_part5_chapter05.presentation.station.StationFragment"
+        android:name="com.example.aop_part5_chapter05.presentation.station.StationsFragment"
         tools:layout="@layout/fragment_station">
 
         <action
@@ -23,7 +23,7 @@
 
         <argument
             android:name="station"
-            app:argType="fastcampus.aop.part5.chapter05.domain.Station" />
+            app:argType="com.example.aop_part5_chapter05.domain.Station" />
 
     </fragment>
 
